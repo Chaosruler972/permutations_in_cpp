@@ -1,6 +1,3 @@
-//
-// Created by chaosruler on 1/13/18.
-//
 
 
 #include "permutation.h"
@@ -76,33 +73,22 @@ bool permutation::remove_letter_from_list(char letter)
     return false;
 }
 
-std::vector<std::string> * permutation::permutations_available()
-{
-    auto * vec = new std::vector<std::string>;
-    auto* mtx = new std::mutex();
-    std::string str;
-    for(char c : *this->letters)
-    {
-        str+=c;
-    }
-    std::thread trd([this,&str,&vec,&mtx] { handle_permutation(str, 0, static_cast<int>(str.size() - 1),vec,mtx);} );
-    trd.join();
-    delete mtx;
-
-    auto * vec2 = new std::vector<std::string>;
-    for(std::string str2 : *vec)
-    {
-        bool found = false;
-        for(std::string str3 : *vec2)
-        {
-            if(str2 == str3)
-                found=true;
+void permutation::permutations_available(int permutation_to_print) {
+    std::vector<char> copy_of_vector(this->letters->size());
+    std::copy(this->letters->begin(), this->letters->end(), copy_of_vector.begin());
+    std::sort(copy_of_vector.begin(), copy_of_vector.end());
+    int index = 1;
+    do {
+        if (permutation_to_print == -1 || permutation_to_print == index) {
+            std::cout << "Permutation #" << index++ << " : ";
+            print_vec(copy_of_vector);
+            std::cout << std::endl;
+        } else {
+            index++;
         }
-        if(!found)
-            vec2->push_back(str2);
-    }
-    delete vec;
-    return vec2;
+
+    } while (std::next_permutation(copy_of_vector.begin(), copy_of_vector.end()));
+
 }
 
 void permutation::swap(std::string& str,int i,int j)
@@ -132,6 +118,11 @@ void permutation::handle_permutation(std::string str,int l, int r,std::vector<st
     }
 }
 
+void permutation::print_vec(const std::vector<char> &other) {
+    for (char c : other) {
+        std::cout << c;
+    }
+}
 
 
 #pragma clang diagnostic pop

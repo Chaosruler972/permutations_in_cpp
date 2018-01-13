@@ -3,14 +3,8 @@
 #include "permutation.h"
 
 int main() {
-    permutation permutation1("abcd");
+    permutation permutation1("0123456789");
 
-    auto* vec = permutation1.permutations_available();
-    int index = 0 ;
-    for(std::string str : *vec)
-    {
-        std::cout << "Permutation #" << index++ << " :" << str << std::endl;
-    }
-    delete vec;
+    permutation1.permutations_available(1000000);
     return 0;
 }

@@ -1,0 +1,3 @@
+/home/chaosruler/Desktop/permutations_in_cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/chaosruler/Desktop/permutations_in_cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/chaosruler/Desktop/permutations_in_cpp/cmake-build-debug/CMakeFiles/permutations.dir

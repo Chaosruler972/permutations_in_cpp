@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/chaosruler/Desktop/permutations_in_cpp/main.cpp
+permutation.h
+/home/chaosruler/Desktop/permutations_in_cpp/permutation.h
+
+/home/chaosruler/Desktop/permutations_in_cpp/permutation.cpp
+permutation.h
+/home/chaosruler/Desktop/permutations_in_cpp/permutation.h
+
+/home/chaosruler/Desktop/permutations_in_cpp/permutation.h
+iostream
+-
+vector
+-
+cmath
+-
+thread
+-
+mutex
+-
+

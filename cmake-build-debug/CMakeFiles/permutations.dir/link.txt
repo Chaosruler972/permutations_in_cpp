@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/permutations.dir/main.cpp.o CMakeFiles/permutations.dir/permutation.cpp.o  -o permutations -pthread 
